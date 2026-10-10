@@ -1,0 +1,153 @@
+name: Tomos GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+concurrency:
+  group: github-pages-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  # Static Site Builderを含むTomos Publishing Coreの固定commit。
+  # 更新時は互換性を確認し、ここを明示的に変更する。
+  TOMOS_VERSION: 5b92b99114d719c083040b4af77f547da9987b32
+  TOMOS_REPOSITORY: https://github.com/tomosweb/tomos.git
+  OUTPUT_DIR: build/tomos-github-pages
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    outputs:
+      site_ready: ${{ steps.site_setup.outputs.ready }}
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - name: Checkout site
+        uses: actions/checkout@v4
+
+      - name: Read site setup
+        id: site_setup
+        shell: bash
+        run: |
+          set -euo pipefail
+          owner="${GITHUB_REPOSITORY%%/*}"
+          repository="${GITHUB_REPOSITORY#*/}"
+          site_name="$repository"
+          if [ -f .tomos-site-name ]; then
+            site_name="$(cat .tomos-site-name)"
+            if [ -z "$site_name" ] || [ "${#site_name}" -gt 120 ] || [[ "$site_name" == *$'\n'* || "$site_name" == *$'\r'* ]]; then
+              echo "サイト名の設定が不正です。" >&2
+              exit 1
+            fi
+          fi
+          printf 'TOMOS_SITE_NAME=%s\n' "$site_name" >> "$GITHUB_ENV"
+          if [ -f .tomos-site-ready ]; then
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+          extensions: mbstring
+          coverage: none
+
+      - name: Fetch pinned Tomos Publishing Core
+        shell: bash
+        run: |
+          set -euo pipefail
+          tomos_root="$RUNNER_TEMP/tomos-core"
+          git clone --depth 1 "$TOMOS_REPOSITORY" "$tomos_root"
+          git -C "$tomos_root" fetch --depth 1 origin "$TOMOS_VERSION"
+          git -C "$tomos_root" checkout --detach "$TOMOS_VERSION"
+          test "$(git -C "$tomos_root" rev-parse HEAD)" = "$TOMOS_VERSION"
+          echo "TOMOS_ROOT=$tomos_root" >> "$GITHUB_ENV"
+
+      - name: Check Static Site Builder contract
+        shell: bash
+        run: php "$TOMOS_ROOT/tests/static_site_builder_check.php"
+
+      - name: Verify site-local theme support
+        shell: bash
+        run: |
+          test -f "$TOMOS_ROOT/tests/static_site_local_theme_check.php"
+          php "$TOMOS_ROOT/tests/static_site_local_theme_check.php"
+
+      - name: Build static site
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$GITHUB_WORKSPACE/assets"
+          cp "$TOMOS_ROOT/assets/tomos-static-search.js" "$GITHUB_WORKSPACE/assets/tomos-static-search.js"
+          rm -rf "$OUTPUT_DIR"
+          php "$TOMOS_ROOT/tools/build-static-site.php" \
+            --config="$GITHUB_WORKSPACE/tomos.config.php" \
+            --tomos-root="$TOMOS_ROOT" \
+            --output="$OUTPUT_DIR"
+
+      - name: Verify generated site
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f "$OUTPUT_DIR/index.html"
+          test -f "$OUTPUT_DIR/404.html"
+          test -f "$OUTPUT_DIR/search-index.json"
+          test -f "$OUTPUT_DIR/feed.xml"
+          test -f "$OUTPUT_DIR/sitemap.xml"
+          test -f "$OUTPUT_DIR/robots.txt"
+          test -f "$OUTPUT_DIR/assets/tomos-static-search.js"
+          selected_theme="$(php -r '$c = require $argv[1]; echo $c["theme"]["name"] ?? "";' "$GITHUB_WORKSPACE/tomos.config.php")"
+          if [[ ! "$selected_theme" =~ ^[A-Za-z0-9][A-Za-z0-9_-]*$ ]]; then
+            echo "Invalid configured theme name" >&2
+            exit 1
+          fi
+          test -f "$OUTPUT_DIR/themes/$selected_theme/assets/style.css"
+          test ! -e "$OUTPUT_DIR/tomos.config.php"
+          test ! -e "$OUTPUT_DIR/core"
+          test ! -e "$OUTPUT_DIR/tools"
+          test ! -e "$OUTPUT_DIR/tests"
+          test ! -e "$OUTPUT_DIR/.github"
+          test -z "$(find "$OUTPUT_DIR" -type f -name '*.md' -print -quit)"
+          owner="${GITHUB_REPOSITORY%%/*}"
+          repository="${GITHUB_REPOSITORY#*/}"
+          owner="$(printf '%s' "$owner" | tr '[:upper:]' '[:lower:]')"
+          repository="$(printf '%s' "$repository" | tr '[:upper:]' '[:lower:]')"
+          base_path="/$repository"
+          if [ "$repository" = "$owner.github.io" ]; then
+            base_path=""
+          fi
+          grep -F "https://$owner.github.io$base_path/" "$OUTPUT_DIR/index.html"
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ env.OUTPUT_DIR }}
+
+  deploy:
+    if: >-
+      ((github.event_name == 'push' && github.ref == 'refs/heads/main') || github.event_name == 'workflow_dispatch')
+      && github.repository != 'tomosweb/tomos-github-template'
+      && needs.build.outputs.site_ready == 'true'
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
