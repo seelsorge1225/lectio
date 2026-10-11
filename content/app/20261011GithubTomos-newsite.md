@@ -7,8 +7,8 @@ folder: app
 tags:
   - "Tomos"
 draft: false
-tomos_github_document_id: 453eb155-2189-49a9-9f88-ff20ae98f610
 published: 2026-10-11T01:38:30Z
+tomos_github_document_id: 453eb155-2189-49a9-9f88-ff20ae98f610
 ---
 
 ## Github PageでTomosサイト立ち上げができるようになった！
