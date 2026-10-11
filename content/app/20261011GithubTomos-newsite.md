@@ -7,8 +7,8 @@ folder: app
 tags:
   - "Tomos"
 draft: false
-published: 2026-10-11T01:38:30Z
 tomos_github_document_id: 453eb155-2189-49a9-9f88-ff20ae98f610
+published: 2026-10-11T01:38:30Z
 ---
 
 ## Github PageでTomosサイト立ち上げができるようになった！
@@ -44,7 +44,7 @@ tomos_github_document_id: 453eb155-2189-49a9-9f88-ff20ae98f610
 という点があった。
 しかし、TomosのGithub版は
 
-- サイトにTomos本家バナーや広告ゼロ
+- サイトにTomos本家や広告なし
 - 完全無料で始められる
 - データはMarkdownファイルで手元に保存できる(Github上にも)
 
@@ -72,7 +72,7 @@ TomosブログがGithub上に作成されてまず気になるのが、トップ
 いわゆる「index」、そして「About」ページの編集だ。
 これについては、[公式のガイドの一番下に記載がある。](https://tomoswords.org/docs/github/settings/)
 
-画像で説明して欲しいという方もいらっしゃるかもしれないと思い、Githubページから編集する場合をスクショで説明する。
+PC画面は見やすいのだが、スマホ上で編集したいとき、画像で説明して欲しいという方もいらっしゃるかもしれないと思い、Githubページから編集する場合をスクショで説明する。
 
 ### 1.Githubにログインする
 
@@ -88,7 +88,7 @@ TomosブログがGithub上に作成されてまず気になるのが、トップ
 ### 2.リポジトリを開く
 
 リポジトリのなかに、先ほど作ったサイトのリポジトリが表示されているはずだ。
-このサイトは「Lectio」で、サイトURLの末尾に指定した文字も「lectio」なので、それが表示されている。
+このサイトは「Lectio」で、URLは「 https://seelsorge1225.github.io/lectio/ 」だ。サイトURLの末尾に指定した文字は「lectio」なので、それが表示されている。
 これを開く。
 ![6160](https://pub-aa20ad6e84bc4a38a975f3fbc60a3e30.r2.dev/tomos/2026/Github03.png)
 すると、このリポジトリ内に入っているファイル一覧が出てくる。
