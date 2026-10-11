@@ -96,7 +96,8 @@ TomosブログがGithub上に作成されてまず気になるのが、トップ
 contentフォルダを開くと、そこに「index.md」がある。
 これが、サイトのトップページに表示される中身を決めるファイルだ。
 なお、「About.md」も一緒にある。
-![6162](https://pub-aa20ad6e84bc4a38a975f3fbc60a3e30.r2.dev/tomos/2026/Github05.png)
+![6162](https://pub-aa20ad6e84bc4a38a975f3fbc60a3e30.r2.dev/tomos/2026/Github04.png)
+
 サイトのトップページの文言を編集したければ、「index.md」を開いて、「preview」「code」「Blame」が並んでいる右端の3点メニューを押し、「Edit file...」の下の「in place」を押そう。
 
 ![6167](https://pub-aa20ad6e84bc4a38a975f3fbc60a3e30.r2.dev/tomos/2026/Github05.png)
