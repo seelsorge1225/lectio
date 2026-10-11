@@ -8,6 +8,7 @@ tags:
   - "Tomos"
 draft: false
 tomos_github_document_id: 453eb155-2189-49a9-9f88-ff20ae98f610
+published: 2026-10-11T01:38:30Z
 ---
 
 ## Github PageでTomosサイト立ち上げができるようになった！
@@ -78,27 +79,27 @@ TomosブログがGithub上に作成されてまず気になるのが、トップ
 [Github](https://Github.com)にログインする。
 作成後であればログイン処理は終わっているので、おそらくすぐこの画面になるだろう。
 
-![6158](<6158.png>)
+![6158](https://pub-aa20ad6e84bc4a38a975f3fbc60a3e30.r2.dev/tomos/2026/Github01.png)
 右上のプロフィールアイコンを押す。
 すると、メニューが出てくるので「Repositories」を選択する。
 
-![6159](<6159.png>)
+![6159](https://pub-aa20ad6e84bc4a38a975f3fbc60a3e30.r2.dev/tomos/2026/Github02.png)
 
 ### 2.リポジトリを開く
 
 リポジトリのなかに、先ほど作ったサイトのリポジトリが表示されているはずだ。
 このサイトは「Lectio」で、サイトURLの末尾に指定した文字も「lectio」なので、それが表示されている。
 これを開く。
-![6160](<6160.png>)
+![6160](https://pub-aa20ad6e84bc4a38a975f3fbc60a3e30.r2.dev/tomos/2026/Github03.png)
 すると、このリポジトリ内に入っているファイル一覧が出てくる。
 これの「content」フォルダに、記事やらなんやらのファイルが入っていくことになる。
 contentフォルダを開くと、そこに「index.md」がある。
 これが、サイトのトップページに表示される中身を決めるファイルだ。
 なお、「About.md」も一緒にある。
-![6162](<6162.png>)
+![6162](https://pub-aa20ad6e84bc4a38a975f3fbc60a3e30.r2.dev/tomos/2026/Github05.png)
 サイトのトップページの文言を編集したければ、「index.md」を開いて、「preview」「code」「Blame」が並んでいる右端の3点メニューを押し、「Edit file...」の下の「in place」を押そう。
 
-![6167](<6167.png>)
+![6167](https://pub-aa20ad6e84bc4a38a975f3fbc60a3e30.r2.dev/tomos/2026/Github05.png)
 
 すると、index.mdの内容が編集できる。
 内容を保存したいときは「commit change」ボタンを2回押せば、その変更が反映される。
