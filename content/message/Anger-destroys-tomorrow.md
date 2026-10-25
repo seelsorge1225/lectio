@@ -4,17 +4,17 @@ date: 2026-10-24
 description: エフェソの信徒への手紙4:26からのミニメッセージ
 folder: message
 tags:
-  - message
   - 新約聖書
   - 使徒書
+  - エフェソの信徒への手紙
 draft: false
 social:
   - bluesky
 social_text:
 本文
 #青空ブログ部 |
-tomos_github_document_id: 19113a10-3a11-465d-bd52-1c1ef32ff53f
 published: 2026-10-24T10:17:40+00:00
+tomos_github_document_id: 19113a10-3a11-465d-bd52-1c1ef32ff53f
 ---
 
 >  怒ることがあっても、罪を犯してはなりません。日が暮れるまで怒ったままでいてはいけません。
