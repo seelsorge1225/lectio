@@ -1,5 +1,5 @@
 ---
-title: フィリピの信徒への手紙 1:6
+title: 黙想フィリピ1:6
 date: 2026-08-17
 description: 
 folder: devotion
@@ -7,11 +7,11 @@ tags:
   - devotion
   - 使徒書
 draft: false
-tomos_github_document_id: fb71d600-a9ae-43f5-ab23-5b21ac0b0f8a
 published: 2026-10-25T06:53:03+00:00
+tomos_github_document_id: fb71d600-a9ae-43f5-ab23-5b21ac0b0f8a
 ---
 
-# フィリピの信徒への手紙 1:6
+## フィリピの信徒への手紙 1:6
 > 「あなたがたの中で善い業を始められた方が、キリスト・イエスの日までに、その業を成し遂げてくださると、わたしは確信しています。」  
 
 +++
