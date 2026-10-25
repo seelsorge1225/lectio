@@ -1,5 +1,5 @@
 ---
-title: ヨハネの手紙一 1:7
+title: 黙想1ヨハネ1:7
 date: 2026-08-17
 description: 
 folder: devotion
@@ -7,11 +7,11 @@ tags:
   - devotion
   - 使徒書
 draft: false
-tomos_github_document_id: 25c62c54-d4a1-4b39-809e-41e1745b826a
 published: 2026-10-25T06:52:07+00:00
+tomos_github_document_id: 25c62c54-d4a1-4b39-809e-41e1745b826a
 ---
 
-# ヨハネの手紙一 1:7
+## ヨハネの手紙一 1:7
 > しかし、神が光の中におられるように、わたしたちが光の中を歩むなら、互いに交わりを持ち、御子イエスの血によってあらゆる罪から清められます。
 
 +++
