@@ -18,6 +18,35 @@ if (!is_string($tomosRoot) || trim($tomosRoot) === '') {
     throw new RuntimeException('TOMOS_ROOT must point to the pinned Tomos checkout.');
 }
 
+// TOMOS_SITE_BRANDING_V1
+// Site-owned branding images; no extra GitHub App permissions are required.
+$tomosBrandingSource = __DIR__ . '/theme-assets';
+$tomosBrandingDestination = rtrim($tomosRoot, DIRECTORY_SEPARATOR) . '/theme-assets';
+if (is_dir($tomosBrandingSource)) {
+    foreach (['ogp', 'favicon'] as $tomosBrandingKind) {
+        foreach (['png', 'jpg', 'webp'] as $tomosBrandingExtension) {
+            $tomosBrandingName = $tomosBrandingKind . '.' . $tomosBrandingExtension;
+            $tomosBrandingFile = $tomosBrandingSource . '/' . $tomosBrandingName;
+            if (!is_file($tomosBrandingFile) || is_link($tomosBrandingFile)) continue;
+            $tomosBrandingInfo = @getimagesize($tomosBrandingFile);
+            if (!is_array($tomosBrandingInfo)) throw new RuntimeException('Invalid site branding image');
+            $tomosBrandingMime = ['png' => 'image/png', 'jpg' => 'image/jpeg', 'webp' => 'image/webp'][$tomosBrandingExtension];
+            if (($tomosBrandingInfo['mime'] ?? '') !== $tomosBrandingMime) throw new RuntimeException('Invalid site branding image format');
+            if (filesize($tomosBrandingFile) > 10485760) {
+                throw new RuntimeException('Site branding image exceeds 10 MB');
+            }
+            if (!is_dir($tomosBrandingDestination)
+                && !mkdir($tomosBrandingDestination, 0755, true)
+                && !is_dir($tomosBrandingDestination)) {
+                throw new RuntimeException('Cannot prepare site branding assets');
+            }
+            if (!copy($tomosBrandingFile, $tomosBrandingDestination . '/' . $tomosBrandingName)) {
+                throw new RuntimeException('Cannot stage site branding image');
+            }
+        }
+    }
+}
+
 return [
     'site' => [
         'name' => 'Lectio',
