@@ -3,8 +3,8 @@ title: About
 date: 2026-10-25
 description: 
 draft: false
-tomos_github_document_id: d9142213-7d0f-4dc4-8c95-8d6b8ddbc511
 published: 2026-10-10T23:56:07Z
+tomos_github_document_id: d9142213-7d0f-4dc4-8c95-8d6b8ddbc511
 ---
 
 ## 峰について
