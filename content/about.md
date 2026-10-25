@@ -16,10 +16,10 @@ tomos_github_document_id: d9142213-7d0f-4dc4-8c95-8d6b8ddbc511
 ## 記事のフォルダ分けについて
 記事は今のところ4つのフォルダに分かれています。（今後も増えるかもしれません）
 
-- [app](https://kyrie-eleison.net/tomos/app/)
-- [devotion](https://kyrie-eleison.net/tomos/devotion/)
-- [thinking](https://kyrie-eleison.net/tomos/thinking/)
-- [message](https://kyrie-eleison.net/tomos/message/)
+- [app](https://seelsorge1225.github.io/lectio/app/)
+- [devotion](https://seelsorge1225.github.io/lectio/devotion/)
+- [thinking](https://seelsorge1225.github.io/lectio/thinking/)
+- [message](https://seelsorge1225.github.io/lectio/message/)
 
 appフォルダはスマホやPCのアプリなどについて書いた記事を置いています。
 
