@@ -37,3 +37,6 @@ messageフォルダは、本サイト「Kyrie」にもアップしている聖�
 - [「Bluesky」： @kyrie-eleison.net](https://bsky.app/profile/did:plc:qulc53omr7mz6tv7uegijpt6)
 - [「Kyrie.」](https://kyrie-eleison.net/)：自メインサイト。
 - [「WORDSWORLD」](https://wordsworld.kyrie-eleison.net/)：創作小説のサイト。以前書いてたやつ
+
+## Attention
+当サイトは、統一協会/ものみの塔（エホバの証人）/モルモン教/摂理（キリスト教福音宣教会）とは**関係ありません。**
