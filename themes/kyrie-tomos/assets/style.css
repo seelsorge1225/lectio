@@ -152,7 +152,7 @@ img { max-width: 100%; height: auto; }
 .home-verse {
   background-color: #1a1d21;
   background-image:
-    linear-gradient(rgb(0 0 0 / 55%), rgb(0 0 0 / 55%)),
+    linear-gradient(rgb(0 0 0 / 35%), rgb(0 0 0 / 35%)),
     url("verse-bg.jpg");
   background-position: center;
   background-size: cover;
