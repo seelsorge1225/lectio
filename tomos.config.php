@@ -21,7 +21,7 @@ if (!is_string($tomosRoot) || trim($tomosRoot) === '') {
 return [
     'site' => [
         'name' => 'Lectio',
-        'description' => 'bookend',
+        'description' => 'devotion and thinking',
         'url' => 'https://' . $owner . '.github.io',
         'base_path' => $basePath,
         'language' => 'ja',
