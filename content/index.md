@@ -1,10 +1,10 @@
 ---
-title: Welcome, "lectio" .
+title: Welcome, "seelsorge" .
 date: 2026-10-25
 description: 
 draft: false
-tomos_github_document_id: f78d03a0-1167-4acd-947e-abafe4bdc5f8
 published: 2026-10-10T23:56:07Z
+tomos_github_document_id: f78d03a0-1167-4acd-947e-abafe4bdc5f8
 ---
 
 ## はじめに
