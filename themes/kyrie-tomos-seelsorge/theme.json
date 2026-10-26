@@ -1,0 +1,8 @@
+{
+  "name": "kyrie-tomos-seelsorge",
+  "display_name": "kyrie-tomos(seelsorge)",
+  "version": "0.1.0",
+  "description": "seelsorge.kyrie-eleison.net 用。kyrie.風の一カラム・上部ヘッダー・横並びナビゲーションのテーマ。",
+  "author": "Kazune Noguchi",
+  "requires_tomos": "0.6.0"
+}
