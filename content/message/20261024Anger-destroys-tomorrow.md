@@ -5,7 +5,6 @@ date: 2026-10-24
 updated:
 description: エフェソの信徒への手紙4:26からのミニメッセージ
 tags:
-  - message
   - 新約聖書
   - 使徒書
 published: 2026-10-25T14:58:27+00:00
