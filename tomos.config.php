@@ -56,7 +56,7 @@ return [
         'language' => 'ja',
     ],
     'theme' => [
-        'name' => 'kyrie-tomos',
+        'name' => 'kyrie-tomos-seelsorge',
     ],
     'paths' => [
         'content_dir' => __DIR__ . '/content',
