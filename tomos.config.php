@@ -50,7 +50,7 @@ if (is_dir($tomosBrandingSource)) {
 return [
     'site' => [
         'name' => 'seelsorge',
-        'description' => 'devotion and thinking',
+        'description' => 'thinking on...',
         'url' => 'https://' . $owner . '.github.io',
         'base_path' => $basePath,
         'language' => 'ja',
