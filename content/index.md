@@ -1,5 +1,5 @@
 ---
-title: Welcome, "seelsorge" .
+title: 峰の雑記帳
 date: 2026-10-25
 description: 
 draft: false
@@ -9,7 +9,8 @@ tomos_github_document_id: f78d03a0-1167-4acd-947e-abafe4bdc5f8
 
 ## はじめに
 
-こちらは雑記、黙想などメインに載せています。
+こちらは雑記帳です。
+日記とか思ったことなど、雑多なものをこちらに投げています。
 
 
 ## SNS・自サイト
