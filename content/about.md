@@ -13,17 +13,9 @@ tomos_github_document_id: d9142213-7d0f-4dc4-8c95-8d6b8ddbc511
 ルーテル教会の牧師をやっています。
 ゲームが好き。
 
-## 記事のフォルダ分けについて
-記事は今のところ2つのフォルダに分かれています。
-
-- [app](https://seelsorge1225.github.io/lectio/app/)
-- [thinking](https://seelsorge1225.github.io/lectio/thinking/)
-
-appフォルダはスマホやPCのアプリなどについて書いた記事を置いています。
-
-thinkingフォルダはいわゆる雑記フォルダです。
+## このサイトについて
+いわゆる雑記フォルダです。
 日記など、思ったことを何でも放り込んでいます。
-
 
 ## Link
 
