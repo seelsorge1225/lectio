@@ -15,7 +15,7 @@ tomos_github_document_id: d9142213-7d0f-4dc4-8c95-8d6b8ddbc511
 
 ## このサイトについて
 日記や思ったことなど。いわゆる雑記です。
-キリスト教・聖書についてのメッセージや黙想は本サイト「Kyrie.」](https://kyrie-eleison.net/)のほうへどうぞ。
+キリスト教・聖書についてのメッセージや黙想は本サイト[「Kyrie.」](https://kyrie-eleison.net/)のほうへどうぞ。
 
 ## Link
 
