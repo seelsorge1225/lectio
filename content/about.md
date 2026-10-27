@@ -14,23 +14,16 @@ tomos_github_document_id: d9142213-7d0f-4dc4-8c95-8d6b8ddbc511
 ゲームが好き。
 
 ## 記事のフォルダ分けについて
-記事は今のところ4つのフォルダに分かれています。（今後も増えるかもしれません）
+記事は今のところ2つのフォルダに分かれています。
 
 - [app](https://seelsorge1225.github.io/lectio/app/)
-- [devotion](https://seelsorge1225.github.io/lectio/devotion/)
 - [thinking](https://seelsorge1225.github.io/lectio/thinking/)
-- [message](https://seelsorge1225.github.io/lectio/message/)
 
 appフォルダはスマホやPCのアプリなどについて書いた記事を置いています。
 
 thinkingフォルダはいわゆる雑記フォルダです。
 日記など、思ったことを何でも放り込んでいます。
 
-devotionフォルダは、聖書箇所についての短い黙想記事が入っています。
-ちょっとした聖書の黙想文を読んでみたい時にどうぞ。
-
-messageフォルダは、本サイト「Kyrie」にもアップしている聖書のメッセージ一覧です。
-内容は同じです。こちらにも一応格納。
 
 ## Link
 
