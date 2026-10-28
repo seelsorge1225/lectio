@@ -1,5 +1,5 @@
 ---
-title: 峰の雑記帳
+title: seelsorge - 峰の雑記帳
 date: 2026-10-25
 description: 
 draft: false
